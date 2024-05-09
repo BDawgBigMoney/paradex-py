@@ -38,8 +38,7 @@ class HttpClient:
         try:
             return res.json()
         except ValueError:
-            print(f"HttpClient: No response request({url}, {http_method.value})")
-
+            pass
     def get(self, api_url: str, path: str, params: Optional[dict] = None) -> dict:
         return self.request(
             url=f"{api_url}/{path}",
